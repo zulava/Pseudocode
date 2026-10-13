@@ -1,0 +1,34 @@
+// Declare variables with different data types
+DECLARE fullName : STRING
+DECLARE age : INTEGER
+DECLARE gender : CHAR
+DECLARE height : REAL
+DECLARE hobby : STRING
+
+// Input section
+OUTPUT "--- Biodata Profile Setup ---"
+
+OUTPUT "Enter your full name: "
+INPUT fullName
+
+OUTPUT "Enter your age: "
+INPUT age
+
+OUTPUT "Enter gender (M/F): "
+INPUT gender
+
+OUTPUT "Enter your height in cm (e.g., 175.5): "
+INPUT height
+
+OUTPUT "Enter your main hobby: "
+INPUT hobby
+
+// Output section
+OUTPUT " "
+OUTPUT "--- Biodata Summary ---"
+OUTPUT "Name: ", fullName
+OUTPUT "Age: ", age
+OUTPUT "Gender: ", gender
+OUTPUT "Height: ", height, " cm"
+OUTPUT "Hobby: ", hobby
+OUTPUT "-----------------------"
