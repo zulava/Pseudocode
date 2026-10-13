@@ -1,0 +1,9 @@
+// Declare variables
+DECLARE visitorName : STRING
+
+// Prompt the user for input
+OUTPUT "Welcome! Please enter your name: "
+INPUT visitorName
+
+// Output a personalized greeting using commas for concatenation
+OUTPUT "Hello, ", visitorName, "! Ready to write some algorithms."
