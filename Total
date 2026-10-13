@@ -1,0 +1,34 @@
+// Program to Calculate the Total Price of Fruit
+
+DECLARE Apples : INTEGER
+DECLARE ApplePrice : INTEGER
+DECLARE Oranges : INTEGER
+DECLARE OrangePrice : INTEGER
+DECLARE TotalApples : INTEGER
+DECLARE TotalOranges : INTEGER
+DECLARE TotalPayment : INTEGER
+
+// Input apple data
+OUTPUT "Enter the Number of Apples: "
+INPUT Apples
+OUTPUT "Enter the Price of Apples: "
+INPUT ApplePrice
+
+// Calculate the total number of apples
+TotalApples <- Apples * ApplePrice
+OUTPUT "TotalApplePrice : ", TotalApples
+
+// Input orange data
+OUTPUT "Enter the Number of Oranges: "
+INPUT Oranges
+OUTPUT "Enter the Price of Oranges: "
+INPUT OrangePrice
+
+// Calculate the total number of oranges
+TotalOranges <- Oranges * OrangePrice
+OUTPUT "Total Price of Oranges: ", TotalOranges
+
+// Calculate the grand total
+TotalPayment <- TotalApples + TotalOranges
+OUTPUT "=============================="
+OUTPUT "Total to be paid: ", TotalPayment
