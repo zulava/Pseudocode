@@ -1,0 +1,97 @@
+// Declare variables with different data types
+DECLARE fullName : STRING
+DECLARE age : INTEGER
+DECLARE gender : CHAR
+DECLARE height : REAL
+DECLARE hobby : STRING
+DECLARE ageGroup : STRING
+DECLARE heightCategory : STRING
+DECLARE counter : INTEGER
+DECLARE hobbyCount : INTEGER
+DECLARE answer : CHAR
+
+REPEAT
+    // ---------- Input section ----------
+    OUTPUT "--- Biodata Profile Setup ---"
+
+    OUTPUT "Enter your full name: "
+    INPUT fullName
+
+    // Loop (WHILE): repeat until age is valid
+    OUTPUT "Enter your age (1-100): "
+    INPUT age
+    WHILE age < 1 OR age > 100 DO
+        OUTPUT "Invalid age! Please enter again (1-100): "
+        INPUT age
+    ENDWHILE
+
+    // Loop (WHILE): repeat until gender is M or F
+    OUTPUT "Enter gender (M/F): "
+    INPUT gender
+    WHILE gender <> 'M' AND gender <> 'F' DO
+        OUTPUT "Invalid! Please enter M or F: "
+        INPUT gender
+    ENDWHILE
+
+    OUTPUT "Enter your height in cm (e.g., 175.5): "
+    INPUT height
+
+    // ---------- Decisions (IF) ----------
+    // Age group
+    IF age < 13 THEN
+        ageGroup <- "Child"
+    ELSE
+        IF age <= 17 THEN
+            ageGroup <- "Teenager"
+        ELSE
+            IF age <= 59 THEN
+                ageGroup <- "Adult"
+            ELSE
+                ageGroup <- "Senior"
+            ENDIF
+        ENDIF
+    ENDIF
+
+    // Height category
+    IF height < 150.0 THEN
+        heightCategory <- "Short"
+    ELSE
+        IF height < 175.0 THEN
+            heightCategory <- "Average"
+        ELSE
+            heightCategory <- "Tall"
+        ENDIF
+    ENDIF
+
+    // ---------- Output section ----------
+    OUTPUT " "
+    OUTPUT "--- Biodata Summary ---"
+    OUTPUT "Name: ", fullName
+    OUTPUT "Age: ", age, " (", ageGroup, ")"
+
+    IF gender = 'M' THEN
+        OUTPUT "Gender: Male"
+    ELSE
+        OUTPUT "Gender: Female"
+    ENDIF
+
+    OUTPUT "Height: ", height, " cm (", heightCategory, ")"
+
+    // Loop (FOR): ask for several hobbies
+    OUTPUT "How many hobbies do you have? "
+    INPUT hobbyCount
+
+    FOR counter <- 1 TO hobbyCount
+        OUTPUT "Enter hobby number ", counter, ": "
+        INPUT hobby
+        OUTPUT "Hobby ", counter, ": ", hobby
+    NEXT counter
+
+    OUTPUT "-----------------------"
+
+    // Loop (REPEAT...UNTIL): run again for another person
+    OUTPUT "Add another person? (Y/N): "
+    INPUT answer
+UNTIL answer = 'N'
+
+OUTPUT "Program finished. Thank you!"
